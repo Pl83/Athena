@@ -17,5 +17,17 @@ const Title = styled.h1`
             default:
                 return "black";
         }
-    }}
+    }};
+    &:hover {
+        color: ${(props) => {
+            switch (props.$variant) {
+                case "primary":
+                    return "green";
+                case "secondary":
+                    return "blue";
+                default:
+                    return "gray";
+            }
+        }}
+    }
 `;
