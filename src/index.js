@@ -1,13 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import HomeScreen from './pages/HomeScreen';
+import ProductsScreen from './pages/ProductsScreen';
+import NotFoundScreen from './pages/NotFoundScreen';
+import ProductScreen from './pages/ProductScreen';
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomeScreen />,
+    errorElement: <NotFoundScreen />
+  },
+  {
+    path: '/products',
+    element: <ProductsScreen />
+  },
+  {
+    path: '/products/:productId',
+    element: <ProductScreen />
+  }
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
