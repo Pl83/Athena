@@ -3,6 +3,7 @@ import MyButton from '../components/MyButton';
 import MyInput from '../components/MyInput';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import MyTitle from '../components/MyTitle';
 
 export default function HomeScreen() {
   const startIt = () => {
@@ -16,7 +17,8 @@ export default function HomeScreen() {
 
   return (
       <section id='main'>
-        <h1>Welcome to Athena</h1>
+        <MyTitle title="Welcome To project Athena" variant="primary"/>
+        <MyTitle title="Welcome To project Athena" variant="secondary"/>
           <div id='btn-section'>
           <MyButton name="Start Project" onClick={startIt}/>
           <MyButton name="Stop Project" onClick={stopIt}/>
